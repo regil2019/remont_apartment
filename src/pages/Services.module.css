@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.servicesSection {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 80px 20px;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.headerContainer {
+  margin-bottom: 50px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: #3498db;
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #7f8c8d;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #bdc3c7, transparent);
+  max-width: 800px;
+  margin: 30px auto;
+}
+
+.servicesContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 50px;
+}
+
+.card {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+  position: relative;
+  height: 250px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.iconContainer {
+  position: absolute;
+  bottom: -25px;
+  right: 25px;
+  width: 60px;
+  height: 60px;
+  background: #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+  z-index: 2;
+}
+
+.serviceIcon {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.cardContent {
+  padding: 40px 25px 25px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 1rem;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.featuresList {
+  text-align: left;
+  margin: 20px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.featureItem {
+  margin-bottom: 12px;
+  font-size: 0.95rem;
+  color: #2c3e50;
+  display: flex;
+  align-items: center;
+}
+
+.featureIcon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #e1f0fa;
+  color: #3498db;
+  border-radius: 50%;
+  margin-right: 10px;
+  font-size: 0.8rem;
+}
+
+.cardFooter {
+  margin-top: auto;
+}
+
+.detailsButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #3498db;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: all 0.3s ease;
+}
+
+.detailsButton:hover {
+  color: #2980b9;
+  gap: 12px;
+}
+
+.arrowIcon {
+  transition: transform 0.3s ease;
+}
+
+.detailsButton:hover .arrowIcon {
+  transform: translateX(5px);
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.calculateButton {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 40px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.calculateButton:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(52, 152, 219, 0.6);
+  gap: 15px;
+}
+
+.buttonIcon {
+  font-size: 1.2rem;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .servicesSection {
+    padding: 60px 15px;
+  }
+  
+  .title {
+    font-size: 2rem;
+  }
+  
+  .servicesContainer {
+    grid-template-columns: 1fr;
+    max-width: 500px;
+  }
+  
+  .calculateButton {
+    padding: 14px 30px;
+    font-size: 1rem;
+  }
+}

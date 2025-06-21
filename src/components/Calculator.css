@@ -1,0 +1,311 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+.calculatorSection {
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+.calculatorHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.titleIcon {
+  font-size: 2.5rem;
+  color: #3498db;
+  margin-bottom: 15px;
+}
+
+.title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.calculatorCard {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  padding: 35px;
+  max-width: 800px;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.calculatorCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.serviceSelector h3 {
+  text-align: left;
+  font-size: 1.3rem;
+  color: #34495e;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+.serviceCards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.serviceCard {
+  flex: 1;
+  min-width: 220px;
+  background: #f8f9fa;
+  border-radius: 15px;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+  text-align: left;
+}
+
+.serviceCard:hover {
+  background: #e9f7fe;
+  transform: translateY(-3px);
+}
+
+.serviceCard.selected {
+  border-color: #3498db;
+  background: #e9f7fe;
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.2);
+}
+
+.serviceIconContainer {
+  width: 50px;
+  height: 50px;
+  background: #3498db;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+.serviceIconContainer .service-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.serviceCard h4 {
+  font-size: 1.2rem;
+  color: #2c3e50;
+  margin: 10px 0 5px;
+}
+
+.serviceCard p {
+  font-size: 0.9rem;
+  color: #7f8c8d;
+  margin: 5px 0;
+  line-height: 1.4;
+}
+
+.priceInfo {
+  margin-top: 10px !important;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.priceLabel {
+  font-weight: 500;
+  color: #34495e;
+}
+
+.priceValue {
+  font-weight: 600;
+  color: #27ae60;
+}
+
+.inputSection {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.inputLabel {
+  display: block;
+  text-align: left;
+  margin-bottom: 25px;
+  font-weight: 500;
+  color: #34495e;
+  font-size: 1rem;
+}
+
+.inputContainer {
+  position: relative;
+  margin-top: 8px;
+}
+
+.inputField {
+  width: 100%;
+  padding: 16px 20px 16px 50px;
+  border: 2px solid #e0e6ed;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  background: #f8f9fa;
+  color: #2c3e50;
+  font-weight: 500;
+}
+
+.inputField:focus {
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+  outline: none;
+  background: white;
+}
+
+.inputIcon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #7f8c8d;
+  font-size: 1.2rem;
+}
+
+.calculateButton {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #3498db;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.calculateButton:hover {
+  background: #2980b9;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(52, 152, 219, 0.4);
+}
+
+.calculateButton:disabled {
+  background: #bdc3c7;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.resultContainer {
+  margin-top: 30px;
+  animation: fadeIn 0.6s ease;
+}
+
+.resultCard {
+  background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+  border-radius: 15px;
+  padding: 25px;
+  color: white;
+  text-align: center;
+}
+
+.resultCard h3 {
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.totalCost {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.costValue {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.currency {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.costDetails {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 15px;
+}
+
+.divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  margin: 15px 0;
+}
+
+.disclaimer {
+  font-size: 0.85rem;
+  opacity: 0.7;
+  margin-top: 15px;
+}
+
+.animated {
+  animation: pulse 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); }
+  100% { transform: scale(1); }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .calculatorSection {
+    padding: 60px 15px;
+  }
+  
+  .title {
+    font-size: 1.8rem;
+  }
+  
+  .calculatorCard {
+    padding: 25px;
+  }
+  
+  .serviceCards {
+    flex-direction: column;
+  }
+  
+  .serviceCard {
+    min-width: 100%;
+  }
+  
+  .costValue {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.6rem;
+  }
+  
+  .inputField {
+    padding: 14px 20px 14px 45px;
+    font-size: 1rem;
+  }
+}

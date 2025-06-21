@@ -1,0 +1,154 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  background-color: var(--light-color);
+  border-bottom: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.logo a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.logo .i-D {
+  font-family: 'Clicker Script', cursive;
+  color: var(--primary-color);
+  font-size: 34px;
+}
+
+.logo .esign {
+  font-style: italic;
+  font-size: 22px;
+  margin-left: 4px;
+  color: var(--text-black-900);
+}
+
+.home-icon {
+  color: var(--primary-color);
+  font-size: 34px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  background: #f8f9fa;
+  border-radius: 30px;
+  padding: 5px 15px;
+  border: 1px solid #e1e5eb;
+  transition: box-shadow 0.3s ease;
+  flex-grow: 1;
+  max-width: 500px;
+  margin: 0 20px;
+}
+
+.search-form:focus-within {
+  box-shadow: 0 0 0 3px rgba(0, 0, 139, 0.15);
+  border-color: var(--primary-color);
+}
+
+.search-input {
+  flex: 1;
+  padding: 8px 12px;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  outline: none;
+}
+
+.search-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--secondary-color);
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-button:hover {
+  color: var(--primary-color);
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: var(--text-black-900);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.nav a:hover {
+  background-color: #f0f5ff;
+  color: var(--primary-color);
+}
+
+.nav-icon {
+  font-size: 18px;
+  margin-bottom: 2px;
+}
+
+/* Botão de menu para mobile */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: var(--text-black-900);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .search-form {
+    display: none;
+  }
+
+  .nav {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: var(--light-color);
+    flex-direction: column;
+    width: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    border-top: 1px solid #eee;
+  }
+
+  .nav.open {
+    max-height: 200px;
+    padding: 10px 0;
+  }
+
+  .mobile-menu-button {
+    display: block;
+  }
+}
