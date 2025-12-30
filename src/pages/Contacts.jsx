@@ -12,18 +12,33 @@ const Contacts = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
   const [successMessage, setSuccessMessage] = useState('')
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [errors, setErrors] = useState({})
 
   const handleChange = e => {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
+  const validateForm = () => {
+    const newErrors = {}
+    if (!formData.name.trim()) newErrors.name = 'Имя обязательно'
+    if (!formData.email.trim()) newErrors.email = 'Email обязателен'
+    else if (!/\S+@\S+\.\S+/.test(formData.email)) newErrors.email = 'Email не корректен'
+    if (!formData.message.trim()) newErrors.message = 'Сообщение обязательно'
+    return newErrors
+  }
+
   const handleSubmit = e => {
     e.preventDefault()
+    const validationErrors = validateForm()
+    if (Object.keys(validationErrors).length > 0) {
+      setErrors(validationErrors)
+      return
+    }
+    setErrors({})
     setIsSubmitting(true)
 
     // Simular envio
     setTimeout(() => {
-      console.log('Отправлено:', formData)
       setSuccessMessage(
         'Спасибо за ваше сообщение! Мы свяжемся с вами в ближайшее время.'
       )

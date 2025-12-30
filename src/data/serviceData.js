@@ -1,5 +1,5 @@
 // src/data/serviceData.js
-import { FaHome, FaPaintRoller, FaPencilRuler } from "react-icons/fa";
+import { FaHome, FaPaintRoller, FaPencilRuler, FaTools } from "react-icons/fa";
 
 export const serviceData = [
   {

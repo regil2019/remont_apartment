@@ -1,4 +1,4 @@
-import React from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Autoplay } from "swiper";
 import "swiper/css";
@@ -39,7 +39,7 @@ function ReviewSlider() {
         {reviews.map((review, index) => (
           <SwiperSlide key={index}>
             <div className="review-card">
-              <p className="review-text">"{review.review}"</p>
+              <p className="review-text">&ldquo;{review.review}&rdquo;</p>
               <h3 className="review-author">{review.name}</h3>
               <span className="review-date">{review.date}</span>
             </div>

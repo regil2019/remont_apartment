@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaStar, FaPaperPlane, FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import './Reviews.css';

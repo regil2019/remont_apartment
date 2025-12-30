@@ -1,5 +1,5 @@
 import  { useState, useEffect } from "react";
-import { FaCalculator, FaHome, FaPaintRoller, FaRulerCombined, FaRubleSign } from "react-icons/fa";
+import { FaCalculator, FaHome, FaPaintRoller, FaRulerCombined } from "react-icons/fa";
 import "./Calculator.css";
 
 const services = [

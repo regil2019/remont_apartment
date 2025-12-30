@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Header.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { FaSearch, FaPaintBrush, FaImages, FaEnvelope, FaHome } from 'react-icons/fa';

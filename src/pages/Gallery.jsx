@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { FaExpand } from "react-icons/fa";
@@ -17,7 +17,7 @@ const images = [
 ];
 
 const  Gallery = () => {
-  const [modalImg, setModalImg] = React.useState(null);
+  const [modalImg, setModalImg] = useState(null);
 
   return (
     <section className="gallery-section">

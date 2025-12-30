@@ -1,53 +1,26 @@
-import React from "react";
+import { memo, useMemo } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import {
-  FaHome,
-  FaPaintRoller,
-  FaPencilRuler,
   FaArrowRight,
   FaCalculator,
 } from "react-icons/fa";
+import { serviceData } from "../data/serviceData";
 import styles from "./Services.module.css";
-
-// Dados dos serviços
-const serviceData = [
-  {
-    id: 1,
-    title: "Ремонты квартиры",
-    description:
-      "Мы поможем вам отремонтировать ваш дом, чтобы воплотить в жизнь ваше видение.",
-    features: ["Полный цикл работ", "Качественные материалы", "Соблюдение сроков"],
-    icon: <FaHome className={styles.serviceIcon} />,
-    image: "/images/service1.jpg",
-  },
-  {
-    id: 2,
-    title: "Дизайн интерьера",
-    description:
-      "Создайте красивое и функциональное пространство с помощью наших экспертов-дизайнеров.",
-    features: ["3D визуализация", "Подбор материалов", "Авторский надзор"],
-    icon: <FaPencilRuler className={styles.serviceIcon} />,
-    image: "/images/service2.jpg",
-  },
-  {
-    id: 3,
-    title: "Отделочные работы",
-    description:
-      "Высококачественная отделка придаст вашему дому элегантность.",
-    features: ["Стены и потолки", "Напольные покрытия", "Декоративные элементы"],
-    icon: <FaPaintRoller className={styles.serviceIcon} />,
-    image: "/images/service3.jpg",
-  },
-];
 
 // Componente principal
 function Services() {
-  const scrollToCalculator = (e) => {
-    e.preventDefault();
-    const calculatorSection = document.getElementById("calculator");
-    if (calculatorSection) {
-      calculatorSection.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const [searchParams] = useSearchParams();
+  const searchTerm = searchParams.get('search') || '';
+
+  const filteredServices = useMemo(() => {
+    if (!searchTerm) return serviceData;
+    return serviceData.filter(service =>
+      service.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      service.description.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [searchTerm]);
+
+
 
   return (
     <section
@@ -77,7 +50,7 @@ function Services() {
                 alt={service.title}
                 className={styles.image}
               />
-              <div className={styles.iconContainer}>{service.icon}</div>
+              <div className={styles.iconContainer}><service.icon className={styles.serviceIcon} /></div>
             </div>
 
             <div className={styles.cardContent}>
@@ -99,28 +72,19 @@ function Services() {
               </ul>
 
               <div className={styles.cardFooter}>
-                <button className={styles.detailsButton}>
+                <Link to="/calculator" className={styles.detailsButton}>
                   Подробнее
                   <FaArrowRight className={styles.arrowIcon} />
-                </button>
+                </Link>
               </div>
             </div>
           </div>
         ))}
       </div>
 
-      <div className={styles.buttonContainer}>
-        <button
-          className={styles.calculateButton}
-          onClick={scrollToCalculator}
-          aria-label="Рассчитать стоимость"
-        >
-          <FaCalculator className={styles.buttonIcon} />
-          Рассчитать стоимость
-        </button>
-      </div>
+
     </section>
   );
 }
 
-export default React.memo(Services);
+export default memo(Services);
