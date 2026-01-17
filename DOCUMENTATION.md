@@ -24,11 +24,11 @@ This project is a frontend application for an apartment renovation company. It i
    ```
 3. Install dependencies:
    ```
-   npm install
+   pnpm install
    ```
 4. Run the development server:
    ```
-   npm run dev
+   pnpm dev
    ```
 
 ### Usage
@@ -61,13 +61,50 @@ Open your browser and go to `http://localhost:3000` (or the port shown in the te
    ```
 3. Установите зависимости:
    ```
-   npm install
+   pnpm install
    ```
 4. Запустите сервер разработки:
    ```
-   npm run dev
+   pnpm dev
    ```
 
 ### Использование
 
 Откройте браузер и перейдите по адресу `http://localhost:3000` (или порт, указанный в терминале), чтобы просмотреть приложение.
+
+---
+
+## Português
+
+Este projeto é uma aplicação frontend para uma empresa de reformas de apartamentos. É construído usando React e Vite.
+
+### Funcionalidades
+
+- Design responsivo
+- Galeria de trabalhos de reforma
+- Página de contato com formulário
+- Descrições de serviços
+- Componente calculadora para estimativa de custos
+
+### Instalação
+
+1. Clone o repositório:
+   ```
+   git clone https://github.com/yourusername/remont_apartment_front.git
+   ```
+2. Navegue para o diretório do projeto:
+   ```
+   cd remont_apartment_front
+   ```
+3. Instale as dependências:
+   ```
+   pnpm install
+   ```
+4. Execute o servidor de desenvolvimento:
+   ```
+   pnpm dev
+   ```
+
+### Uso
+
+Abra seu navegador e acesse `http://localhost:3000` (ou a porta mostrada no terminal) para visualizar a aplicação.

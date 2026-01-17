@@ -1,92 +1,57 @@
 # Apartment Renovation Services Website
 
-A modern React application for apartment renovation and interior design services. Built with Vite, React Router, and Swiper for a smooth user experience.
+Modern design with service cost calculator, responsive layout for all devices. Built with React, Vite, and modern web technologies.
 
-## Features
+## English
 
-- **Service Calculator**: Interactive tool to estimate renovation costs
-- **Service Portfolio**: Showcase of renovation projects with image gallery
-- **Customer Reviews**: Testimonial slider with ratings
-- **Contact Form**: Functional contact form with validation
-- **Responsive Design**: Mobile-first approach with modern UI
-- **Search Functionality**: Filter services by keywords
-- **Accessibility**: ARIA labels and keyboard navigation support
+### Features
+- Service Calculator: Interactive tool to estimate renovation costs
+- Service Portfolio: Showcase of renovation projects with image gallery
+- Customer Reviews: Testimonial slider with ratings
+- Contact Form: Functional contact form with validation
+- Responsive Design: Mobile-first approach with modern UI
 
-## Tech Stack
+### Tech Stack
+- React 18, Vite, React Router DOM, Swiper, React Icons, CSS Modules
 
-- React 18
-- Vite
-- React Router DOM
-- Swiper (for carousels)
-- React Icons
-- CSS Modules
-- ESLint
+### Getting Started
+1. Clone repo: `git clone <url>`
+2. Install: `pnpm install`
+3. Run: `pnpm dev`
+4. Open http://localhost:5173
 
-## Getting Started
+## Português
 
-### Prerequisites
-- Node.js 16+
-- pnpm or npm
+### Recursos
+- Calculadora de Serviços: Ferramenta interativa para estimar custos de reforma
+- Portfólio de Serviços: Apresentação de projetos de reforma com galeria de imagens
+- Avaliações de Clientes: Slider de depoimentos com classificações
+- Formulário de Contato: Formulário funcional com validação
+- Design Responsivo: Abordagem mobile-first com UI moderna
 
-### Installation
+### Tecnologias
+- React 18, Vite, React Router DOM, Swiper, React Icons, CSS Modules
 
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd remont_apartment
-```
+### Iniciando
+1. Clonar repo: `git clone <url>`
+2. Instalar: `pnpm install`
+3. Executar: `pnpm dev`
+4. Abrir http://localhost:5173
 
-2. Install dependencies:
-```bash
-pnpm install
-```
+## Русский
 
-3. Start development server:
-```bash
-pnpm dev
-```
+### Возможности
+- Калькулятор услуг: Интерактивный инструмент для оценки стоимости ремонта
+- Портфолио услуг: Презентация проектов ремонта с галереей изображений
+- Отзывы клиентов: Слайдер отзывов с рейтингом
+- Форма контактов: Функциональная форма с валидацией
+- Адаптивный дизайн: Мобильный подход с современным UI
 
-4. Open [http://localhost:5173](http://localhost:5173) in your browser.
+### Технологии
+- React 18, Vite, React Router DOM, Swiper, React Icons, CSS Modules
 
-### Build for Production
-
-```bash
-pnpm build
-```
-
-## Project Structure
-
-```
-src/
-├── components/          # Reusable components
-│   ├── Calculator.jsx   # Cost calculator
-│   ├── Header.jsx       # Navigation header
-│   ├── Reviews.jsx      # Reviews page
-│   └── ReviewSlider.jsx # Review carousel
-├── pages/               # Route components
-│   ├── Home.jsx         # Landing page
-│   ├── Services.jsx     # Services showcase
-│   ├── Gallery.jsx      # Project gallery
-│   └── Contacts.jsx     # Contact form
-├── data/                # Static data
-│   └── serviceData.js   # Services information
-└── images/              # Static assets
-```
-
-## Scripts
-
-- `pnpm dev` - Start development server
-- `pnpm build` - Build for production
-- `pnpm preview` - Preview production build
-- `pnpm lint` - Run ESLint
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make changes and test
-4. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License.
+### Начало работы
+1. Клонировать репозиторий: `git clone <url>`
+2. Установить: `pnpm install`
+3. Запустить: `pnpm dev`
+4. Открыть http://localhost:5173

@@ -1,0 +1,40 @@
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+  color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+.logo-icon svg {
+  font-size: 18px;
+}
+
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-main {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--dark-color);
+}
+
+.logo-sub {
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  align-self: flex-end;
+}

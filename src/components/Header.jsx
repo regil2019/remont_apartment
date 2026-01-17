@@ -1,69 +1,103 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import {
+  FaSearch,
+  FaPaintBrush,
+  FaImages,
+  FaEnvelope,
+  FaBars,
+  FaTimes
+} from 'react-icons/fa';
+import Logo from './Logo';
 import './Header.css';
-import { Link, useNavigate } from 'react-router-dom';
-import { FaSearch, FaPaintBrush, FaImages, FaEnvelope, FaHome } from 'react-icons/fa';
 
 function Header() {
   const [searchTerm, setSearchTerm] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSearch = (e) => {
     e.preventDefault();
+    if (!searchTerm.trim()) return;
+
     navigate(`/services?search=${encodeURIComponent(searchTerm)}`);
+    setIsMenuOpen(false);
   };
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
+  useEffect(() => {
+    const onScroll = () => setIsScrolled(window.scrollY > 20);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   return (
-    <header className="header">
-      <div className="logo">
-        <Link to="/" aria-label="Página inicial">
-          <FaHome className="home-icon" />
-        </Link>
+    <header className={`header ${isScrolled ? 'scrolled' : ''}`}>
+      <div className="header-container">
+
+        {/* LEFT - LOGO */}
+        <div className="header-left">
+          <Link to="/" className="logo" aria-label="Главная страница">
+            <Logo />
+          </Link>
+        </div>
+
+        {/* CENTER - SEARCH */}
+        <div className="header-center">
+          <form className="search-form" onSubmit={handleSearch} role="search">
+            <FaSearch className="search-icon" />
+            <input
+              className="search-input"
+              type="text"
+              placeholder="Поиск услуги..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </form>
+        </div>
+
+        {/* RIGHT - NAV */}
+        <div className="header-right">
+          <nav className={`nav ${isMenuOpen ? 'open' : ''}`}>
+            <Link
+              to="/services"
+              className={`nav-link ${location.pathname === '/services' ? 'active' : ''}`}
+            >
+              <FaPaintBrush className="nav-icon" />
+              <span>Услуги</span>
+            </Link>
+
+            <Link
+              to="/gallery"
+              className={`nav-link ${location.pathname === '/gallery' ? 'active' : ''}`}
+            >
+              <FaImages className="nav-icon" />
+              <span>Галерея</span>
+            </Link>
+
+            <Link
+              to="/contacts"
+              className={`nav-link ${location.pathname === '/contacts' ? 'active' : ''}`}
+            >
+              <FaEnvelope className="nav-icon" />
+              <span>Контакты</span>
+            </Link>
+          </nav>
+
+          <button
+            className="mobile-menu-button"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Меню"
+          >
+            {isMenuOpen ? <FaTimes /> : <FaBars />}
+          </button>
+        </div>
+
       </div>
-
-
-      <form onSubmit={handleSearch} className="search-form" role="search" aria-label="Pesquisar serviço">
-        <input
-          type="text"
-          className="search-input"
-          placeholder="поиск услуги"
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          aria-label="Pesquisar serviço"
-        />
-        <button type="submit" className="search-button" aria-label="Buscar">
-          <FaSearch />
-        </button>
-      </form>
-
-      <nav className={`nav ${isMenuOpen ? 'open' : ''}`} aria-label="Navegação principal">
-        <Link to="/services">
-          <FaPaintBrush className="nav-icon" />
-          <span>услуги</span>
-        </Link>
-        <Link to="/gallery">
-          <FaImages className="nav-icon" />
-          <span>галерея</span>
-        </Link>
-        <Link to="/contacts">
-          <FaEnvelope className="nav-icon" />
-          <span>контакты</span>
-        </Link>
-      </nav>
-
-      <button
-        className="mobile-menu-button"
-        onClick={toggleMenu}
-        aria-label={isMenuOpen ? 'Fechar menu' : 'Abrir menu'}
-        aria-expanded={isMenuOpen}
-      >
-        {isMenuOpen ? '✕' : '☰'}
-      </button>
     </header>
   );
 }
+
 export default Header;
